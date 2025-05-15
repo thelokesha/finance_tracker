@@ -73,7 +73,7 @@ $customerDropdownResult = $conn->query($customerDropdownQuery);
                     $totalRow = $loansTotal->fetch_assoc();
                     $totalAmount = $totalRow['total'] ?? 0;
                     ?>
-                    <div class="stat-number">$<?php echo number_format($totalAmount, 2); ?></div>
+                    <div class="stat-number">₹<?php echo number_format($totalAmount, 2); ?></div>
                     <p>Total Portfolio</p>
                 </div>
                 <div class="overview-card">
@@ -132,7 +132,7 @@ $customerDropdownResult = $conn->query($customerDropdownQuery);
                                 <td><?php echo htmlspecialchars($summary['customer_name']); ?></td>
                                 <td><?php echo htmlspecialchars($summary['email']); ?></td>
                                 <td><?php echo $summary['loan_count']; ?></td>
-                                <td>$<?php echo number_format($summary['total_amount'], 2); ?></td>
+                                <td>₹<?php echo number_format($summary['total_amount'], 2); ?></td>
                                 <td><?php echo number_format($summary['avg_interest'], 2); ?>%</td>
                             </tr>
                         <?php endwhile; ?>
@@ -260,7 +260,7 @@ $customerDropdownResult = $conn->query($customerDropdownQuery);
                                 <tr>
                                     <td><?php echo htmlspecialchars($loan['id']); ?></td>
                                     <td><?php echo htmlspecialchars($loan['customer_name']); ?></td>
-                                    <td>$<?php echo number_format($loan['amount'], 2); ?></td>
+                                    <td>₹<?php echo number_format($loan['amount'], 2); ?></td>
                                     <td><?php echo htmlspecialchars($loan['interest_rate']); ?>%</td>
                                     <td><?php echo htmlspecialchars($loan['terms']); ?></td>
                                     <td><?php echo date('M d, Y', strtotime($loan['created_at'])); ?></td>
